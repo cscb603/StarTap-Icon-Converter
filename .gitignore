@@ -1,0 +1,13 @@
+__pycache__/
+dist/
+build/
+*.pyc
+*.build/
+*.icns
+*.ico
+*.exe
+*.sh
+nuitka_check_standard.sh
+图片图标.png
+.DS_Store
+*.iconset/
