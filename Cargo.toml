@@ -1,0 +1,33 @@
+[package]
+name = "rust_image_compressor"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+eframe = "0.26"
+egui = "0.26"
+image = { version = "0.24", features = ["png", "jpeg", "webp", "bmp", "ico"] }
+fast_image_resize = "4.2"
+jpeg-encoder = "0.5"
+img-parts = "0.3"
+rayon = "1.8"
+anyhow = "1.0"
+crossbeam-channel = "0.5"
+rfd = "0.14"
+opener = "0.8.3"
+
+# Windows specific
+[target.'cfg(target_os = "windows")'.dependencies]
+windows = { version = "0.52", features = ["Win32_UI_WindowsAndMessaging"] }
+
+[build-dependencies]
+embed-resource = "2.4"
+
+[profile.release]
+opt-level = 3           # 极致性能优化
+lto = "fat"             # 胖 LTO 跨模块优化，体积更小，性能更强
+codegen-units = 1       # 单个编译单元，允许更彻底的全局优化
+panic = "abort"         # 发生异常时直接终止，减小二进制体积
+strip = true            # 剔除符号表，显著减小体积
+debug = false
+incremental = false     # 关闭增量编译，确保最终产物最优化

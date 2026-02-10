@@ -1,0 +1,46 @@
+#include <windows.h>
+
+// Use UTF-8 code page
+#pragma code_page(65001)
+
+// Icon Resource
+// ID 1 is standard for the main application icon
+MAINICON ICON "icon.ico"
+
+// Manifest
+1 24 "app.manifest"
+
+// Version Information
+VS_VERSION_INFO VERSIONINFO
+FILEVERSION 1,2,0,0
+PRODUCTVERSION 1,2,0,0
+FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+FILEFLAGS 0x1L
+#else
+FILEFLAGS 0x0L
+#endif
+FILEOS 0x40004L
+FILETYPE 0x1L
+FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "080404b0" // Chinese (Simplified), Unicode
+        BEGIN
+            VALUE "CompanyName", "星TAP 实验室 (cscb603@qq.com)"
+            VALUE "FileDescription", "星TAP 高清缩图工具 - 极速图片处理"
+            VALUE "FileVersion", "1.2.0.0"
+            VALUE "InternalName", "星TAP 高速缩图rust版.exe"
+            VALUE "LegalCopyright", "Copyright (C) 2026 星TAP"
+            VALUE "OriginalFilename", "星TAP 高速缩图rust版.exe"
+            VALUE "ProductName", "星TAP 高清缩图"
+            VALUE "ProductVersion", "2026 Professional"
+            VALUE "Comments", "Support: cscb603@qq.com"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x0804, 1200
+    END
+END

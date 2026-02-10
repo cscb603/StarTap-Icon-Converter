@@ -1,0 +1,17 @@
+[workflow]
+name = "Trae-Global-Recovery"
+
+# 启动时：从全局仓库找回该项目的“记忆”
+[hooks.pre-generate]
+command = "python F:\\trae-cn\\trae_recovery.py"
+args = ["--action", "recover"]
+
+# 过程中：实时向全局仓库同步状态
+[hooks.post-generate]
+command = "python F:\\trae-cn\\trae_recovery.py"
+args = ["--action", "snapshot+trim"]
+
+# 编译后：缓存编译日志
+[hooks.post-compile]
+command = "python F:\\trae-cn\\trae_recovery.py"
+args = ["--action", "save-compile-log", "--log-path", "target/debug/build.log"]
