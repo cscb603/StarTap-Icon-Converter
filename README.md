@@ -34,7 +34,7 @@
 ### 🚀 使用指南
 
 #### 【Windows 用户】
-1.  下载 `generate_icon_v2.exe` (或运行 Python 源码)。
+1.  下载 `StarTap_Icon_Converter.exe` (或运行 Python 源码)。
 2.  将你的 PNG 图片命名为 `高速缩图图标.png` 放在程序同级目录，或修改脚本路径。
 3.  运行程序，即可在同目录获得 `icon.ico` 和 `icon.icns`。
 
